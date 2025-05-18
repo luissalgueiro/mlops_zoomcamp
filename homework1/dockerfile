@@ -1,0 +1,49 @@
+##FROM python:3.8-alpine
+FROM python:3.9-slim
+
+RUN apt-get update && apt-get install -y wget \
+    build-essential \
+    python3-dev \
+    gfortran \
+    && rm -rf /var/lib/apt/lists/*
+
+
+### label descriptions
+
+LABEL mantainer="Luis Salgueiro <luis.salgueiro.py@gmail.com>"
+LABEL description="First Docker container to be used in the MLOps zoomcamp, deploy a lightweight python app"
+
+
+## ENV VARIABLES
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+
+## INSTALL GIT AND DEPENDENCIES
+##RUN apk update && apk add --no-cache git  ## apk is for alpine version
+
+## CREATE DATA FOLDER
+RUN mkdir -p /app/data
+
+## clone git repo 
+##RUN git clone https://github.com/DataTalksClub/mlops-zoomcamp.git /app/data
+
+
+## setting working directory
+WORKDIR /app
+
+## COPY PYTHON SCRIPT TO WORKING DIRECTORY
+COPY . /app
+
+RUN python -m pip install --upgrade pip
+
+## INSTALL ANY DEPENDENCIES
+RUN pip install --no-cache-dir -r requirements.txt
+
+## DEFAULT COMMAND TO RUN THE PYTHON APP
+CMD ["python", "main.py"]
+
+
+
+
+
