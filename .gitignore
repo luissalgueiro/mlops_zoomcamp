@@ -1,0 +1,6 @@
+data_bk/*
+data/*
+*.parquet
+*.csv
+*.png
+
