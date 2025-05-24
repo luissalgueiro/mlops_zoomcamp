@@ -1,5 +1,6 @@
 data_bk/*
 data/*
+env_hw2/*
 *.parquet
 *.csv
 *.png
