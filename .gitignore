@@ -1,6 +1,10 @@
 data_bk/*
 data/*
 homework2/env_hw2/*
+homework2/.ipynb*
+homework2/models*
+homework2/mlflow*
+homework2/mlrun*
 *.parquet
 *.csv
 *.png
