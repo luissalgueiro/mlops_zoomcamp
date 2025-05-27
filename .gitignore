@@ -1,6 +1,6 @@
 data_bk/*
 data/*
-env_hw2/*
+homework2/env_hw2/*
 *.parquet
 *.csv
 *.png
