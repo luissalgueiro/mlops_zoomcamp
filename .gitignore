@@ -4,4 +4,5 @@ env_hw2/*
 *.parquet
 *.csv
 *.png
-
+*.json
+*.jar
